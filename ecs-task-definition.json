@@ -1,5 +1,5 @@
 {
-    "family": "vcp-cal-tf-ui",
+    "family": "vcp-node-custom-auth-para-ui",
     "containerDefinitions": [
         {
             "name": "vcp-node-custom-auth-para-ui-nginx-img",
