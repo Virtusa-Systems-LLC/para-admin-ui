@@ -1,0 +1,47 @@
+.table-div {
+  overflow-x: auto;
+}
+
+th {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.329);
+}
+td {
+  font-size: 11px;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.root-app {
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* td:nth-child(3) {
+  max-width: 280px;
+}
+td:nth-child(4) {
+  max-width: 230px;
+}
+td:nth-child(5) {
+  max-width: 150px;
+}
+td:nth-child(6) {
+  max-width: 150px;
+} */
+
+/* .nsm7Bb-HzV7m-LgbsSe-BPrWId {
+  display: none;
+}
+.domain-name {
+  cursor: pointer;
+}
+
+.e-float-input.e-control-wrapper:not(.e-error) input:valid ~ label.e-float-text,
+.e-float-input.e-control-wrapper:not(.e-error)
+  input
+  ~ label.e-label-top.e-float-text {
+  color: #3f51b5;
+  font-size: 15px;
+} */
