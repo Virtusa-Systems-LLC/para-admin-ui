@@ -100,7 +100,7 @@
         {
             "name": "node",
             "host": {
-                "sourcePath": "/home/jenkins/vcp-data/vcp-repos/branches/vcp-node-custom-auth-para-ui
+                "sourcePath": "/home/jenkins/vcp-data/vcp-repos/branches/vcp-node-custom-auth-para-ui"
             }
         },
         {
