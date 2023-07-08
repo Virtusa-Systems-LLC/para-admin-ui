@@ -1,0 +1,61 @@
+{
+  "family": "vcp-node-cloud-svc-task",
+  "taskRoleArn": "arn:aws:iam::787952688011:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::787952688011:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/vcp-node-cloud-svc",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "portMappings": [
+        {
+          "hostPort": 0,
+          "protocol": "tcp",
+          "containerPort": 80
+        }
+      ],
+      "mountPoints": [
+        {
+          "containerPath": "/opt/app1",
+          "sourceVolume": "VCP-NODE-JS-CODE-PATH"
+        }
+      ],
+      "secrets": [
+        {
+          "valueFrom": "arn:aws:ssm:us-east-1:787952688011:parameter/RDBMS_PASSWORD",
+          "name": "RDBMS_PASSWORD"
+        },
+        {
+          "valueFrom": "arn:aws:ssm:us-east-1:787952688011:parameter/RDBMS_USER",
+          "name": "RDBMS_USER"
+        },
+        {
+          "valueFrom": "arn:aws:ssm:us-east-1:787952688011:parameter/auth-vcp-cm-token",
+          "name": "auth-vcp-cm-token"
+        }
+      ],
+
+      "image": "787952688011.dkr.ecr.us-east-1.amazonaws.com/vss-images:vcp-node-cloud-svc-main-img-efs",
+      "name": "vcp-node-cloud-svc-main-img"
+    }
+  ],
+  "volumes": [
+    {
+      "name": "VCP-NODE-JS-CODE-PATH",
+      "host": {
+        "sourcePath": "/home/jenkins/vcp-data/vcp-repos/branches/main/vcp-node-cloud-svc"
+      }
+    }
+  ],
+  "memory": "512",
+  "networkMode": "bridge",
+  "runtimePlatform": {
+    "operatingSystemFamily": "LINUX"
+  },
+  "cpu": "256"
+}
