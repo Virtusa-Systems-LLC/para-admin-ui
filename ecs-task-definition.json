@@ -11,7 +11,7 @@
             "portMappings": [
                 {
                     "containerPort": 98,
-                    "hostPort": 98,
+                    "hostPort": 3098,
                     "protocol": "tcp"
                 }
             ],
@@ -54,7 +54,7 @@
             "cpu": 0,
             "portMappings": [
                 {
-                    "containerPort": 4000,
+                    "containerPort": 99,
                     "hostPort": 0,
                     "protocol": "tcp"
                 }
