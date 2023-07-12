@@ -10,8 +10,8 @@
             ],
             "portMappings": [
                 {
-                    "containerPort": 98,
-                    "hostPort": 98,
+                    "containerPort": 82,
+                    "hostPort": 82,
                     "protocol": "tcp"
                 }
             ],
