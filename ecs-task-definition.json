@@ -51,8 +51,8 @@
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "vcp-node-custom-auth-para-ui-img-5006-tcp",
-                    "containerPort": 5006,
+                    "name": "vcp-node-custom-auth-para-ui-img-5010-tcp",
+                    "containerPort": 5010,
                     "hostPort": 0,
                     "protocol": "tcp"
                 }
