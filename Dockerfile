@@ -8,5 +8,5 @@ RUN npm i --only=production
 RUN npm i -g nodemon
 WORKDIR /opt/app/scripts
 RUN ls -la
-EXPOSE 5006
+EXPOSE 5010
 CMD ["nodemon", "server.js"]
