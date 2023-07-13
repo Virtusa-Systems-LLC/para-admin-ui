@@ -1,5 +1,5 @@
 {
-    "family": "vcp-node-custom-auth-para-ui",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:787952688011:task-definition/vcp-node-custom-auth-para-ui-td:2",
     "containerDefinitions": [
         {
             "name": "vcp-node-custom-auth-para-ui-nginx-img",
@@ -10,6 +10,7 @@
             ],
             "portMappings": [
                 {
+                    "name": "vcp-node-custom-auth-para-ui-nginx-img-62-tcp",
                     "containerPort": 62,
                     "hostPort": 62,
                     "protocol": "tcp"
@@ -27,10 +28,6 @@
             "volumesFrom": [],
             "secrets": [
                 {
-                    "name": "MONGO_URI",
-                    "valueFrom": "arn:aws:ssm:us-east-1:787952688011:parameter/MONGO_URI"
-                },
-                {
                     "name": "PARAMETER_STORE_ACCESS_KEY",
                     "valueFrom": "arn:aws:ssm:us-east-1:787952688011:parameter/PARAMETER_STORE_ACCESS_KEY"
                 },
@@ -42,7 +39,7 @@
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-group": "/ecs/vcp-cal-tf-ui",
+                    "awslogs-group": "/ecs/vcp-node-custom-auth-para-ui-td",
                     "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
                 }
@@ -54,6 +51,7 @@
             "cpu": 0,
             "portMappings": [
                 {
+                    "name": "vcp-node-custom-auth-para-ui-img-5006-tcp",
                     "containerPort": 5006,
                     "hostPort": 0,
                     "protocol": "tcp"
@@ -71,10 +69,6 @@
             "volumesFrom": [],
             "secrets": [
                 {
-                    "name": "MONGO_URI",
-                    "valueFrom": "arn:aws:ssm:us-east-1:787952688011:parameter/MONGO_URI"
-                },
-                {
                     "name": "PARAMETER_STORE_ACCESS_KEY",
                     "valueFrom": "arn:aws:ssm:us-east-1:787952688011:parameter/PARAMETER_STORE_ACCESS_KEY"
                 },
@@ -86,33 +80,66 @@
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-group": "/ecs/vcp-cal-tf-ui",
+                    "awslogs-group": "/ecs/vcp-node-custom-auth-para-ui-td",
                     "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
                 }
             }
         }
     ],
+    "family": "vcp-node-custom-auth-para-ui-td",
     "taskRoleArn": "arn:aws:iam::787952688011:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::787952688011:role/ecsTaskExecutionRole",
     "networkMode": "bridge",
+    "revision": 2,
     "volumes": [
         {
             "name": "node",
             "host": {
-                "sourcePath": "/home/jenkins/vcp-data/vcp-repos/branches/vcp-node-custom-auth-para-ui"
+                "sourcePath": "/home/jenkins/vcp-data/vcp-repos/branches/master/vcp-node-custom-auth-para-ui"
             }
         },
         {
             "name": "react-build",
             "host": {
-                "sourcePath": "/home/jenkins/vcp-data/vcp-repos/branches/vcp-node-custom-auth-para-ui"
+                "sourcePath": "/home/jenkins/vcp-data/vcp-repos/branches/master/vcp-node-custom-auth-para-ui/build"
             }
         }
+    ],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "ecs.capability.secrets.ssm.environment-variables"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2"
     ],
     "requiresCompatibilities": [
         "EC2"
     ],
     "cpu": "256",
-    "memory": "256"
+    "memory": "256",
+    "registeredAt": "2023-07-12T12:50:26.497Z",
+    "registeredBy": "arn:aws:iam::787952688011:user/Abhishek",
+    "tags": []
 }
