@@ -3,8 +3,8 @@ const CredentialsContext = createContext();
 
 const initialState = {
   aws: {
-    accessKey: "AKIA3O5ND3OFQMKMY6RV",
-    secretKey: "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",
+    accessKey: "",
+    secretKey: "",
   },
   app: {
     accessKey: "app:para",
